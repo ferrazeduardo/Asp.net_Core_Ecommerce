@@ -3,11 +3,9 @@ using Ecommerce.Models;
 
 namespace Ecommerce.Repositories
 {
-    public interface IProdutoRepository
+    public interface ICategoriaRepository
     {
         /*interface para a implementação do Repositorio Produto */
-        IEnumerable<Produto> Produtos {get;}
-
-        Produto GetProdutobyId(int ProdutoId);
+        IEnumerable<Categoria> Categorias {get;}
     }
 }

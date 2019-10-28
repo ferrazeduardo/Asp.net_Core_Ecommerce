@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Ecommerce.Repositories;
 
 namespace e_commerce
 {
@@ -29,6 +30,9 @@ namespace e_commerce
             services.AddDbContext<AppDbContext>(options =>
                 options.UseMySql(connection)
             );
+
+            services.AddTransient<IProdutoRepository,ProdutoRepository>();
+
             services.AddControllersWithViews();
         }
 
