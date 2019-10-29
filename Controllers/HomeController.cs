@@ -5,39 +5,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Ecommerce.ViewModels;
 using Ecommerce.Models;
+using Ecommerce.Repositories;
 
 namespace Ecommerce.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICategoriaRepository _categoriaRepository;
+        private readonly IProdutoRepository _produtoRepository;
 
-        List<ProdutoViewModel> produtos = new List<ProdutoViewModel>{
-            new ProdutoViewModel{
-                Nome="Feijao",
-                Preco=3,
-                ProdutoId=1
-            },
-            new ProdutoViewModel{
-                Nome="Arroz",
-                Preco=4,
-                ProdutoId=2
-            },
-            new ProdutoViewModel{
-                Nome="Macarrão",
-                Preco = 9,
-                ProdutoId=3
-            }
-        };
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,IProdutoRepository produtoRepository,ICategoriaRepository categoriaRepository)
         {
             _logger = logger;
+            _categoriaRepository=categoriaRepository;
+            _produtoRepository=produtoRepository;
         }
 
-        public IActionResult Index() => View(model: produtos);
+        public IActionResult Index(){
+            
+            var produtos = _produtoRepository.Produtos;
+
+            return View(model: produtos);
+        } 
 
         public IActionResult Privacy()
         {

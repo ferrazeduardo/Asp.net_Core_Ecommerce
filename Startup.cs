@@ -32,6 +32,7 @@ namespace e_commerce
             );
 
             services.AddTransient<IProdutoRepository,ProdutoRepository>();
+            services.AddTransient<ICategoriaRepository,CategoriaRepository>();
 
             services.AddControllersWithViews();
         }
