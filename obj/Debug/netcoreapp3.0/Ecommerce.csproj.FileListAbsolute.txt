@@ -44,3 +44,5 @@
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Ecommerce.Views.pdb
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Ecommerce.csproj.CopyComplete
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Produto/ExibirDetalhes.cshtml.g.cs
+/home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_CategoriaResumo.cshtml.g.cs
+/home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_ProdutosResumo.cshtml.g.cs

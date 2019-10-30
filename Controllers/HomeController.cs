@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Ecommerce.Models;
 using Ecommerce.Repositories;
+using Ecommerce.ViewModels;
 
 namespace Ecommerce.Controllers
 {
+    /*Home Controller */
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -22,12 +24,15 @@ namespace Ecommerce.Controllers
             _categoriaRepository=categoriaRepository;
             _produtoRepository=produtoRepository;
         }
-
+        /*Controlador da Pagina Index, gera a pagina inicial do site */
         public IActionResult Index(){
             
-            var produtos = _produtoRepository.Produtos;
+            var produtosViewModel = new ProdutoViewModel(){
+                Produtos = _produtoRepository.Produtos,
+                Categorias = _categoriaRepository.Categorias
+            };
 
-            return View(model: produtos);
+            return View(model: produtosViewModel);
         } 
 
         public IActionResult Privacy()

@@ -1,0 +1,17 @@
+@model Produto 
+
+<div class="col-sm-4">
+    <div class="card">
+        <img src="@Model.ImagemUrl" class="card-img-top" alt="@Model.Nome">
+        <div class="card-body">
+            <h5 class="card-title">
+                Nome : @Model.Nome
+            </h5>
+            <p class="card-text">
+                Preço : @Model.Preco
+            </p>
+            <a class="btn btn-warning" asp-controller="Produto" asp-action="ExibirDetalhes" asp-route-ProdutoId="@Model.ProdutoId">Detalhes</a>
+            <a class="btn btn-primary">+ Carrinho</a>                
+        </div>
+    </div>
+</div>
