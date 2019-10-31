@@ -1,0 +1,21 @@
+@model Produto
+
+@{
+    ViewData["Title"] = "Detalhes " + Model.Nome;
+}
+
+<div>
+    <div>
+        @Model.ImagemUrl
+    </div>
+    <div>
+        @Model.Nome
+    </div>
+    <div>
+        @Model.Descricao
+    </div>
+    <div>
+        @Model.Preco
+    </div>
+    <button class="btn btn-success" asp-controller="Carrinho" asp-action="AddCarrinho" asp-route-ProdutoId="@Model.ProdutoId">+ Carrinho</button>
+</div>

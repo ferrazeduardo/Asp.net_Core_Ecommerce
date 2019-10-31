@@ -9,6 +9,8 @@ namespace Ecommerce.ViewModels
         public IEnumerable<Produto> Produtos { get; set; }
 
         public IEnumerable<Categoria> Categorias { get; set; }
+
+        public Produto produto { get; set; }
     }
     
 }

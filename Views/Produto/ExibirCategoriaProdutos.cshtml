@@ -1,0 +1,11 @@
+@model IEnumerable<Produto>
+
+@{
+    ViewData["Title"]="Produtos";
+}
+
+<div class="row">    
+    @foreach(var produto in Model){
+        @await Html.PartialAsync("_ProdutosResumo",produto)
+    }    
+</div>

@@ -9,5 +9,7 @@ namespace Ecommerce.Repositories
         IEnumerable<Produto> Produtos {get;}
 
         Produto GetProdutobyId(int ProdutoId);
+
+        IEnumerable<Produto> GetProdutoCategoria(int CategoriaId);
     }
 }
