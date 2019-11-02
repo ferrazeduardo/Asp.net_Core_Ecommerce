@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Ecommerce.Repositories;
+using Microsoft.AspNetCore.Http;
+using Ecommerce.Models;
 
 namespace e_commerce
 {
@@ -33,7 +35,14 @@ namespace e_commerce
 
             services.AddTransient<IProdutoRepository,ProdutoRepository>();
             services.AddTransient<ICategoriaRepository,CategoriaRepository>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+            services.AddScoped(cp => Carrinho.GetCarrinho(cp));
+
+
+            services.AddSession();
+            services.AddMemoryCache();
+            
             services.AddControllersWithViews();
         }
 
