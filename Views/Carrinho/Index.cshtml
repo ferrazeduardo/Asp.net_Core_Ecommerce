@@ -19,8 +19,8 @@
         <tr>
             <th scope="row" class="">1</th>
             <td>@produto.Produto.Nome</td>
-            <td> <input type="number" id="quantidade_@produto.Produto.Nome" min="1" max="@produto.Produto.Quantidade" value="@produto.Quantidade"> </td>
-            <td id="valor_@produto.Produto.Nome" >@produto.Produto.Preco</td>
+            <td> <input class="quantidade" type="number" id="quantidade_@produto.Produto.Nome" min="1" max="@produto.Produto.Quantidade" value="@produto.Quantidade"> </td>
+            <td class="valor" id="valor" >@produto.Produto.Preco</td>
         </tr>    
         }
         <tr>
