@@ -47,3 +47,4 @@
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_CategoriaResumo.cshtml.g.cs
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_ProdutosResumo.cshtml.g.cs
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Produto/ExibirCategoriaProdutos.cshtml.g.cs
+/home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Carrinho/Index.cshtml.g.cs

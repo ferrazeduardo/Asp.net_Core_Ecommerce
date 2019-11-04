@@ -11,7 +11,7 @@
                 Preço : @Model.Preco
             </p>
             <a class="btn btn-warning" asp-controller="Produto" asp-action="ExibirDetalhes" asp-route-ProdutoId="@Model.ProdutoId">Detalhes</a>
-            <a class="btn btn-primary">+ Carrinho</a>                
+            <a class="btn btn-primary" asp-controller="Carrinho" asp-action="Adicionar" asp-route-ProdutoId="@Model.ProdutoId">+ Carrinho</a>                
         </div>
     </div>
 </div>

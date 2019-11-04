@@ -1,0 +1,32 @@
+@model CarrinhoViewModel
+
+@{
+    ViewData["Title"] = "Carrinho de Compra";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Produto</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model.Carrinho.GetProdutosCarrinho())
+        {
+        <tr>
+            <th scope="row" class="">1</th>
+            <td>@produto.Produto.Nome</td>
+            <td> <input type="number" id="quantidade_@produto.Produto.Nome" min="1" max="@produto.Produto.Quantidade" value="@produto.Quantidade"> </td>
+            <td id="valor_@produto.Produto.Nome" >@produto.Produto.Preco</td>
+        </tr>    
+        }
+        <tr>
+            <th></th>
+            <td colspan="2">Total</td>
+            <td id="total"></td>    
+        </tr>
+    </tbody>
+</table>

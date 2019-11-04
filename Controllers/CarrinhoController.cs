@@ -32,7 +32,7 @@ namespace Ecommerce.Controllers
         }
 
         /*função adcionar ao carrinho do controller Carrinho */
-        public RedirectToActionResult Adcionar(int ProdutoId){
+        public RedirectToActionResult Adicionar(int ProdutoId){
             
             var produto = _produtoRepository.Produtos.FirstOrDefault(p => p.ProdutoId == ProdutoId);
 
