@@ -1,8 +1,14 @@
 const sections = document.querySelectorAll('section');
 
-var somaTotal = 0;
-var subtotal = 0;
+const calsubtotal = document.getElementById('calSubtotal');
 
+const inputs = document.querySelectorAll('input');
+
+const myChange = new Event('myChange');
+
+var somaTotal = 0;
+
+/*pega o valor total inicial da compra*/
 sections.forEach( section => {
 
     somaTotal =  parseFloat(section.innerHTML.replace(',','.')) + parseFloat(somaTotal) ;   
@@ -10,15 +16,12 @@ sections.forEach( section => {
     document.getElementById('total').textContent = somaTotal.toString().replace('.',',');
 });
 
-
-const myChange = new Event('myChange');
-
+/*declara eventos */
 document.addEventListener('change',event=>{
   EventTarget.prototype.dispatchEvent.call(event.target,myChange)
 });
 
-const inputs = document.querySelectorAll('input');
-
+/*faz o calculo do valor a ser paga por produto multiplicando pela quantidade */
 inputs.forEach(input => {
 
   input.addEventListener('myChange',event=>{
@@ -27,8 +30,25 @@ inputs.forEach(input => {
     
     document.getElementsByName(event.target.id)[0].textContent = valor.toString().replace('.',',');
 
-    subtotal = subtotal + parseFloat(document.getElementsByName(event.target.id)[0].innerHTML.replace(',','.'));
-
-    console.log(subtotal);
   })
+});
+
+calsubtotal.addEventListener('click',event=>{
+
+  let elementos = document.getElementsByClassName('preco_subTotal');
+
+  let soma=0;
+
+  let valores = [];
+
+  for (let i = 0; i < elementos.length; i++) {
+    valores.push(elementos[i].innerHTML.replace(',','.'))
+  }
+
+  valores.map(valor =>{
+    soma = parseFloat(soma) + parseFloat(valor);
+  });
+
+  document.getElementById('subtotal').textContent = soma.toString().replace('.',',');
+  console.log(soma)
 });
