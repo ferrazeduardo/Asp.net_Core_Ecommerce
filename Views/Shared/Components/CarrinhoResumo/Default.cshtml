@@ -1,0 +1,9 @@
+@model CarrinhoViewModel
+
+@if(Model.Carrinho.GetProdutosCarrinho().Count>=1){
+    <span> <img src="https://img.icons8.com/office/30/000000/buy.png"> </span>
+    <span class="cart-status">
+        @Model.Carrinho.GetProdutosCarrinho().Count
+    </span>
+}
+
