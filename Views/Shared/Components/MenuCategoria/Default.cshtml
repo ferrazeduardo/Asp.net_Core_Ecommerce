@@ -1,0 +1,12 @@
+@model ProdutoViewModel
+
+<ul>
+    @foreach (var categoria in Model.Categorias)
+    {
+        <li>
+            <a asp-controller="Produto" asp-action="ExibirCategoriaProdutos" asp-route-CategoriaId="@categoria.CategoriaId">
+                @categoria.CategoriaNome
+            </a>
+        </li>   
+    }
+</ul>

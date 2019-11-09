@@ -12400,6 +12400,31 @@
         }
       },
       {
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__MenuCategoriaViewComponentTagHelper",
+        "AssemblyName": "Ecommerce",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:menu-categoria",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__MenuCategoriaViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "MenuCategoria"
+        }
+      },
+      {
         "Kind": "Components.Bind",
         "Name": "Bind",
         "AssemblyName": "Microsoft.AspNetCore.Components",
@@ -14384,6 +14409,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Shared/Components/MenuCategoria/Default.cshtml",
+      "TargetPath": "Views/Shared/Components/MenuCategoria/Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Home/Privacy.cshtml",
       "TargetPath": "Views/Home/Privacy.cshtml",
       "FileKind": "mvc"
@@ -14414,18 +14444,13 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Shared/Components/CarrinhoResumo/Default.cshtml",
+      "TargetPath": "Views/Shared/Components/CarrinhoResumo/Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Shared/Error.cshtml",
       "TargetPath": "Views/Shared/Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/Component/CarrinhoResumo/Default.cshtml",
-      "TargetPath": "Views/Shared/Component/CarrinhoResumo/Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/_CategoriaResumo.cshtml",
-      "TargetPath": "Views/Shared/_CategoriaResumo.cshtml",
       "FileKind": "mvc"
     },
     {

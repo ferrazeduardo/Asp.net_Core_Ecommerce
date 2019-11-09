@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">e_commerce</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -24,11 +24,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        @await Component.InvokeAsync("CarrinhoResumo")
+                        <li>
+                            @await Component.InvokeAsync("CarrinhoResumo")
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <!-- Toggle Categoria -->
+        <div class="container mt-0 mb-4 ">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-light p-4">
+                    @await Component.InvokeAsync("MenuCategoria")
+                </div>
+            </div>
+            <nav class="navbar navbar-light bg-light border-bottom box-shadow">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">

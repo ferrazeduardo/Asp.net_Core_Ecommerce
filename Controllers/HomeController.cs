@@ -17,15 +17,13 @@ namespace Ecommerce.Controllers
         public HomeController(ILogger<HomeController> logger,IProdutoRepository produtoRepository,ICategoriaRepository categoriaRepository)
         {
             _logger = logger;
-            _categoriaRepository=categoriaRepository;
             _produtoRepository=produtoRepository;
         }
         /*Controlador da Pagina Index, gera a pagina inicial do site */
         public IActionResult Index(){
             
             var produtosViewModel = new ProdutoViewModel(){
-                Produtos = _produtoRepository.Produtos,
-                Categorias = _categoriaRepository.Categorias
+                Produtos = _produtoRepository.Produtos
             };
 
             return View(model: produtosViewModel);
