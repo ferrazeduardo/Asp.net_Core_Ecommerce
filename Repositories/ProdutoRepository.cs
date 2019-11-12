@@ -17,17 +17,10 @@ namespace Ecommerce.Repositories
         /*retorna uma lista de produtos */
         public IEnumerable<Produto> Produtos => _context.Produtos.Include(c=>c.Categoria);
 
-        public IEnumerable<Scored> Socreds(int ProdutoId) => _context.Scoreds.Where(s => s.ProdutoId == ProdutoId);
-
         /*retorna um produto pelo seu Id */
-        public Produto GetProdutobyId(int ProdutoId)
-        {
-            return _context.Produtos.FirstOrDefault(c=>c.ProdutoId==ProdutoId);
-        }
+        public Produto GetProdutobyId(int ProdutoId) => _context.Produtos.FirstOrDefault(c => c.ProdutoId == ProdutoId);
+        
         /*retorna uma lista de produtos pela sua categoria */
-        public IEnumerable<Produto> GetProdutoCategoria(int CategoriaId)
-        {
-            return _context.Produtos.Where(c=>c.CategoriaId==CategoriaId).Include(c=>c.Categoria);
-        }
+        public IEnumerable<Produto> GetProdutoCategoria(int CategoriaId) => _context.Produtos.Where(c => c.CategoriaId == CategoriaId).Include(c => c.Categoria);
     }
 }
