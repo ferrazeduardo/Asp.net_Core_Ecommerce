@@ -1,4 +1,6 @@
 
+using System.Collections.Generic;
+
 namespace Ecommerce.Models{
 
     public class Produto{
@@ -10,6 +12,7 @@ namespace Ecommerce.Models{
         public decimal Preco { get; set; }
         public int CategoriaId { get; set; }//informa que existe uma relacionamento entre lanche e categoria
         public virtual Categoria Categoria { get; set; }
+        public List<Scored> Scoreds { get; set; }
     }
 
 }

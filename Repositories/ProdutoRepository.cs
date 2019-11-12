@@ -17,6 +17,8 @@ namespace Ecommerce.Repositories
         /*retorna uma lista de produtos */
         public IEnumerable<Produto> Produtos => _context.Produtos.Include(c=>c.Categoria);
 
+        public IEnumerable<Scored> Socreds(int ProdutoId) => _context.Scoreds.Where(s => s.ProdutoId == ProdutoId);
+
         /*retorna um produto pelo seu Id */
         public Produto GetProdutobyId(int ProdutoId)
         {
