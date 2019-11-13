@@ -11,10 +11,9 @@ namespace Ecommerce.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ICategoriaRepository _categoriaRepository;
         private readonly IProdutoRepository _produtoRepository;
 
-        public HomeController(ILogger<HomeController> logger,IProdutoRepository produtoRepository,ICategoriaRepository categoriaRepository)
+        public HomeController(ILogger<HomeController> logger,IProdutoRepository produtoRepository)
         {
             _logger = logger;
             _produtoRepository=produtoRepository;

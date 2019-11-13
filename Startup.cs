@@ -35,6 +35,7 @@ namespace e_commerce
 
             services.AddTransient<IProdutoRepository,ProdutoRepository>();
             services.AddTransient<ICategoriaRepository,CategoriaRepository>();
+            services.AddTransient<IScoredRepository,ScoredRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddScoped(cp => Carrinho.GetCarrinho(cp));
