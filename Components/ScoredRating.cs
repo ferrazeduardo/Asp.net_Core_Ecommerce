@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Ecommerce.Repositories; 
+using Ecommerce.ViewModels;
 
 namespace Ecommerce.Components
 {
@@ -8,13 +9,18 @@ namespace Ecommerce.Components
 
         private readonly IScoredRepository _scoredRepository;
 
-        public ClassName(IScoredRepository scoredRepository)
+        public ScoredRating(IScoredRepository scoredRepository)
         {
             _scoredRepository=scoredRepository;
         }
 
-        public IViewComponentResult Invoke(){
-            return View();
+        public IViewComponentResult Invoke(int ProdutoId){
+
+            var scoredViewModel = new ScoredViewModel{
+                Scored = ProdutoId
+            };
+
+            return View(scoredViewModel);
         }
     }
 }

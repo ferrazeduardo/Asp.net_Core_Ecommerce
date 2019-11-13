@@ -10,6 +10,9 @@
             <p class="card-text">
                 Preço : @Model.Preco
             </p>
+            <p>
+                @await Component.InvokeAsync("ScoredRating", new {ProdutoId=Model.ProdutoId})
+            </p>
             <a class="btn btn-warning" asp-controller="Produto" asp-action="ExibirDetalhes" asp-route-ProdutoId="@Model.ProdutoId">Detalhes</a>
             <a class="btn btn-primary" asp-controller="Carrinho" asp-action="Adicionar" asp-route-ProdutoId="@Model.ProdutoId">+ Carrinho</a>                
         </div>
