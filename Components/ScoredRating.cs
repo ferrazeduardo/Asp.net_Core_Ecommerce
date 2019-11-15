@@ -17,7 +17,8 @@ namespace Ecommerce.Components
         public IViewComponentResult Invoke(int ProdutoId){
 
             var scoredViewModel = new ScoredViewModel{
-                Scored = ProdutoId
+                Scored = ProdutoId,
+                ProdutoId = ProdutoId
             };
 
             return View(scoredViewModel);
