@@ -1,10 +1,12 @@
 @model ScoredViewModel
-
+<script src="~/js/scored.js"></script>
 <div>
-    <img src="~/Imagem/empty-estrela.png" class="star_@Model.ProdutoId">
-    <img src="~/Imagem/empty-estrela.png" class="star_@Model.ProdutoId">
-    <img src="~/Imagem/empty-estrela.png" class="star_@Model.ProdutoId">
-    <img src="~/Imagem/empty-estrela.png" class="star_@Model.ProdutoId">
-    <img src="~/Imagem/empty-estrela.png" class="star_@Model.ProdutoId">
+    <img src="~/Imagem/empty-estrela.png" class="star" onload="myFunction(this)"  data-rating="@Model.Scored">
+    <img src="~/Imagem/empty-estrela.png" class="star" onload="myFunction2(this)" data-rating="@Model.Scored">
+    <img src="~/Imagem/empty-estrela.png" class="star" onload="myFunction3(this)" data-rating="@Model.Scored">
+    <img src="~/Imagem/empty-estrela.png" class="star" onload="myFunction4(this)" data-rating="@Model.Scored">
+    <img src="~/Imagem/empty-estrela.png" class="star" onload="myFunction5(this)" data-rating="@Model.Scored">
 </div>
+
+
 
