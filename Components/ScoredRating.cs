@@ -16,9 +16,10 @@ namespace Ecommerce.Components
 
         public IViewComponentResult Invoke(int ProdutoId){
 
+            var somaScored = _scoredRepository.GetScored(ProdutoId);
+
             var scoredViewModel = new ScoredViewModel{
-                Scored = ProdutoId,
-                ProdutoId = ProdutoId
+                Scored = somaScored
             };
 
             return View(scoredViewModel);

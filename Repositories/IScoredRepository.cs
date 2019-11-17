@@ -1,11 +1,7 @@
-using System.Collections.Generic;
-using Ecommerce.Models;
-
-namespace Ecommerce.Repositories
+namespace  Ecommerce.Repositories
 {
     public interface IScoredRepository
     {
-        IEnumerable<Scored> GetScored(int ProdutoId);
-        
+        int GetScored(int ProdutoId);
     }
 }

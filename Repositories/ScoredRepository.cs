@@ -1,20 +1,34 @@
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using Ecommerce.Models;
 using Ecommerce.Data;
+// using MySql.Data.MySqlClient;
 
 namespace Ecommerce.Repositories
 {
     public class ScoredRepository : IScoredRepository
     {
-        private readonly AppDbContext _context;
+         private readonly AppDbContext _context;
 
-        public ScoredRepository(AppDbContext context)
-        {
-            _context=context;
-        }
+         public ScoredRepository(AppDbContext context)
+         {
+             _context=context;
+         }
 
-        public IEnumerable<Scored> GetScored(int ProdutoId)=> _context.Scoreds.Where(s => s.ProdutoId == ProdutoId).Include(s=>s.Produto);
+        public int GetScored(int ProdutoId){
+
+            // MySqlConnection conexao = new MySqlConnection("server=localhost;database=Ecommerce;User id=root;password=123456");
+            // MySqlCommand comando = new MySqlCommand("SELECT * FROM SCOREDS",conexao);
+            // var tabela = new MySqlDataAdapter();
+
+            var somaValor = _context.Scoreds.Where(s=>s.ProdutoId==ProdutoId);
+
+            var soma = 0;
+            foreach(var valor in somaValor){
+
+                soma = soma + valor.Score;
+
+            }
+
+            return soma;
+        } 
     }
 }

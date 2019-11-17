@@ -15,7 +15,7 @@ namespace Ecommerce.Repositories
             _context=context;
         }
         /*retorna uma lista de produtos */
-        public IEnumerable<Produto> Produtos => _context.Produtos.Include(c=>c.Categoria);
+        public IEnumerable<Produto> Produtos =>  _context.Produtos.Include(c=>c.Categoria);
 
         /*retorna um produto pelo seu Id */
         public Produto GetProdutobyId(int ProdutoId) => _context.Produtos.FirstOrDefault(c => c.ProdutoId == ProdutoId);
