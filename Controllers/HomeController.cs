@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Ecommerce.Models;
 using Ecommerce.Repositories;
 using Ecommerce.ViewModels;
+using System.Linq;
 
 namespace Ecommerce.Controllers
 {
@@ -22,7 +23,7 @@ namespace Ecommerce.Controllers
         public IActionResult Index(){
             
             var produtosViewModel = new ProdutoViewModel(){
-                Produtos = _produtoRepository.Produtos
+                Produtos = _produtoRepository.Produtos.ToList()
             };
 
             return View(model: produtosViewModel);

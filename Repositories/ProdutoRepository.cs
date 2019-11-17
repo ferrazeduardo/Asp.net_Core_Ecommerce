@@ -22,5 +22,6 @@ namespace Ecommerce.Repositories
         
         /*retorna uma lista de produtos pela sua categoria */
         public IEnumerable<Produto> GetProdutoCategoria(int CategoriaId) => _context.Produtos.Where(c => c.CategoriaId == CategoriaId).Include(c => c.Categoria);
+
     }
 }
