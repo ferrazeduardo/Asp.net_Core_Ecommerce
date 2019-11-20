@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Ecommerce.Repositories;
+using Ecommerce.ViewModels;
 
 namespace Ecommerce.Controllers
 {
@@ -15,7 +16,15 @@ namespace Ecommerce.Controllers
         public IActionResult ExibirDetalhes(int ProdutoId)
         {
             var produto = _produtoRepository.GetProdutobyId(ProdutoId);
-            return View(model: produto);
+            var comentarios = _produtoRepository.GetComentarios(ProdutoId);
+
+            var produtoViewModel = new ProdutoViewModel{
+                produto = produto,
+                Comentarios = comentarios
+            };
+
+
+            return View(model: produtoViewModel);
         }
 
         /*Exibir Produtos por categorias */

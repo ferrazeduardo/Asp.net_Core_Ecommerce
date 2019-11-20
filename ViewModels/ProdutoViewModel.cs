@@ -11,6 +11,8 @@ namespace Ecommerce.ViewModels
         public IEnumerable<Categoria> Categorias { get; set; }
 
         public Produto produto { get; set; }
+
+        public IEnumerable<Comentario> Comentarios { get; set; }
     }
     
 }

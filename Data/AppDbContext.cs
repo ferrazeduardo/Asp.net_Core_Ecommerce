@@ -10,5 +10,6 @@ namespace Ecommerce.Data{
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<ProdutoCarrinho> ProdutosCarrinho { get; set; }
         public DbSet<Scored> Scoreds { get; set; }
+        public DbSet<Comentario> Comentarios { get; set; }
     }
 }

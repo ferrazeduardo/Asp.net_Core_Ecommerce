@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 
 namespace Ecommerce.Models{
@@ -13,6 +12,7 @@ namespace Ecommerce.Models{
         public int CategoriaId { get; set; }//informa que existe uma relacionamento entre lanche e categoria
         public virtual Categoria Categoria { get; set; }
         public List<Scored> Scoreds { get; set; }
+        public List<Comentario> Comentarios { get; set; }
     }
 
 }

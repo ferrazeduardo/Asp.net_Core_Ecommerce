@@ -1,21 +1,33 @@
-@model Produto
+@model ProdutoViewModel
 
 @{
-    ViewData["Title"] = "Detalhes " + Model.Nome;
+    ViewData["Title"] = "Detalhes " + Model.produto.Nome;
 }
 
 <div>
     <div>
-        @Model.ImagemUrl
+        <img src="@Model.produto.ImagemUrl"> 
     </div>
     <div>
-        @Model.Nome
+        @Model.produto.Nome
     </div>
     <div>
-        @Model.Descricao
+        @Model.produto.Descricao
     </div>
     <div>
-        @Model.Preco
+        @Model.produto.Preco
     </div>
-    <button class="btn btn-success" asp-controller="Carrinho" asp-action="AddCarrinho" asp-route-ProdutoId="@Model.ProdutoId">+ Carrinho</button>
+    <button class="btn btn-success" asp-controller="Carrinho" asp-action="AddCarrinho" asp-route-ProdutoId="@Model.produto.ProdutoId">+ Carrinho</button>
+</div>
+
+
+<div>
+    <ul>
+    @foreach (var item in Model.Comentarios)
+    {
+        <li>
+            @item.ComentarioDoCliente
+        </li>
+    }
+    </ul>
 </div>
