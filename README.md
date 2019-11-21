@@ -1,3 +1,7 @@
+<p align="center">
+   <img src="https://miro.medium.com/max/822/1*Voh7k0_lP6wMJEApsqfKnA.png"/>
+<p/>
+
 # Asp.net_Core_Ecommerce
 Ecommerce desenvolvido utilizando Asp.net Core 3.0
 
