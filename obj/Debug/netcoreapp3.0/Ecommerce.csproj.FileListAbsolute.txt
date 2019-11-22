@@ -50,4 +50,3 @@
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/Components/CarrinhoResumo/Default.cshtml.g.cs
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/Components/MenuCategoria/Default.cshtml.g.cs
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/Components/ScoredRating/Default.cshtml.g.cs
-/home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/Components/ExibirComentario/Default.cshtml.g.cs

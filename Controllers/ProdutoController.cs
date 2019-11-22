@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Ecommerce.Repositories;
 using Ecommerce.ViewModels;
+using System.Linq;
 
 namespace Ecommerce.Controllers
 {
@@ -30,7 +31,7 @@ namespace Ecommerce.Controllers
         /*Exibir Produtos por categorias */
         public IActionResult ExibirCategoriaProdutos(int CategoriaId)
         {
-            var produtos = _produtoRepository.GetProdutoCategoria(CategoriaId);
+            var produtos = _produtoRepository.GetProdutoCategoria(CategoriaId).ToList();
             return View(model:produtos);
         }
 

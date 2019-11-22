@@ -13,5 +13,6 @@ namespace Ecommerce.Repositories
         IEnumerable<Produto> GetProdutoCategoria(int CategoriaId);
 
         IEnumerable<Comentario> GetComentarios(int ProdutoId);
+
     }
 }

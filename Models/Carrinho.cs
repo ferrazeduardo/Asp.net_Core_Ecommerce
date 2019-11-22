@@ -16,9 +16,16 @@ namespace Ecommerce.Models
         {
             _context=context;
         }
+        public Carrinho(string carrinhoId) 
+        {
+            this.CarrinhoId = carrinhoId;
+        
+        }
         public string CarrinhoId { get; set; }//hash de identificação do carrinho
 
         public List<ProdutoCarrinho> ProdutosCarrinho { get; set; }//lista para adicionar os itens
+
+        public IEnumerable<ProdutoCarrinho> produtos { get; set; }
 
         /*obter a sessão */
         public static Carrinho GetCarrinho(IServiceProvider services)
@@ -50,9 +57,6 @@ namespace Ecommerce.Models
                     Quantidade = 1
                 };
                 _context.ProdutosCarrinho.Add(produtoCarrinho);
-            }
-            else{
-                produtoCarrinho.Quantidade++;
             }
 
             _context.SaveChanges();
@@ -109,6 +113,21 @@ namespace Ecommerce.Models
                 .Select(c => c.Produto.Preco * c.Quantidade).Sum();
 
             return total;
+        }
+
+        public IEnumerable<ProdutoCarrinho> GetFinalizarCarrinho(IEnumerable<Produto> Produtos){
+
+            foreach(var produto in Produtos){
+                produtos = _context.ProdutosCarrinho.Where(p => p.Produto.ProdutoId == produto.ProdutoId && p.CarrinhoId == CarrinhoId);
+            }
+
+            if(produtos != null){
+                _context.ProdutosCarrinho.UpdateRange(produtos);
+            }
+
+            _context.SaveChanges();
+
+            return _context.ProdutosCarrinho;
         }
     }
 }

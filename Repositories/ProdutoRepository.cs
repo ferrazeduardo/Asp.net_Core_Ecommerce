@@ -10,10 +10,12 @@ namespace Ecommerce.Repositories
     public class ProdutoRepository : IProdutoRepository
     {
         private readonly AppDbContext _context;
+        
         public ProdutoRepository(AppDbContext context)
         {
             _context=context;
         }
+
         /*retorna uma lista de produtos */
         public IEnumerable<Produto> Produtos =>  _context.Produtos.Include(c=>c.Categoria);
 
@@ -22,8 +24,10 @@ namespace Ecommerce.Repositories
         
         /*retorna uma lista de produtos pela sua categoria */
         public IEnumerable<Produto> GetProdutoCategoria(int CategoriaId) => _context.Produtos.Where(c => c.CategoriaId == CategoriaId).Include(c => c.Categoria);
-
+        
+        /*retorna uma lista de comentarios*/
         public IEnumerable<Comentario> GetComentarios(int ProdutoId) => _context.Comentarios.Where(c=>c.ProdutoId == ProdutoId);
 
+        
     }
 }
