@@ -52,8 +52,6 @@ calsubtotal.addEventListener('click',event=>{
   });
 
   document.getElementById('subtotal').textContent = soma.toString().replace('.',',');
-  console.log(soma)
-
 
   $('.item').each(function(){
         
@@ -61,11 +59,15 @@ calsubtotal.addEventListener('click',event=>{
           ProdutoId:$(this).children()[0].innerText,
           Nome:$(this).children()[1].innerText,
           Quantidade:$(this).children()[2].innerText,
-          Preco:$(this).children()[4].innerText
+          Preco:$(this).children()[4].innerText,
+          CarrinhoId: document.getElementById('CarrinhoId').value
       };
       todas_linhas.push(entidade_linha);
   })
-  $("#btn-pedido").append("<a class='btn btn-success' asp-controller='Pedido' asp-action='FinalizarCarrinho' asp-route-Produtos='todas_linhas'>Pedido</a>")
-  enviar_dados(todas_linhas);
+
+  console.log(todas_linhas);
+
+  $("#btn-pedido").append(`<a class='btn btn-success' href='/Pedido/FinalizarCarrinho?Produtos='${todas_linhas}'>Pedido</a>`)
+  //enviar_dados(todas_linhas);
   
 })

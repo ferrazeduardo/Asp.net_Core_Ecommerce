@@ -4,7 +4,7 @@
     ViewData["Title"] = "Carrinho de Compra";
 }
 
-<form  asp-controller="Pedido" asp-action="Checkout" method="get">
+
     <table class="table table-bordered">
         <thead>
             <tr class="cabecalho">
@@ -30,9 +30,9 @@
             }
         </tbody>
     </table>
-    <input type="hidden" asp-for="CarrinhoId" value="@Model.CarrinhoId"/>
+
+    <input type="hidden" id='CarrinhoId' value="@Model.CarrinhoId"/>
     
-</form>
 
 <ul>
     <li>Total</li>

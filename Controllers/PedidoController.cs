@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +13,7 @@ namespace Ecommerce.Controllers
             //     _carrinho.GetFinalizarCarrinho(carrinhoViewModels);
             // }
 
-            return Content(" ");
+            return Content(" "+Produtos.Count);
         }
     }
 }
