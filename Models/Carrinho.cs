@@ -5,6 +5,7 @@ using Ecommerce.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Ecommerce.ViewModels;
 
 namespace Ecommerce.Models
 {
@@ -115,7 +116,7 @@ namespace Ecommerce.Models
             return total;
         }
 
-        public IEnumerable<ProdutoCarrinho> GetFinalizarCarrinho(IEnumerable<Produto> Produtos){
+        public IEnumerable<ProdutoCarrinho> GetFinalizarCarrinho(List<Produto> Produtos){
 
             foreach(var produto in Produtos){
                 produtos = _context.ProdutosCarrinho.Where(p => p.Produto.ProdutoId == produto.ProdutoId && p.CarrinhoId == CarrinhoId);

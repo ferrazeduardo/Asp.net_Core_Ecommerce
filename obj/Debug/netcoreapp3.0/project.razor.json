@@ -14443,73 +14443,73 @@
   "RootNamespace": "Ecommerce",
   "Documents": [
     {
-      "FilePath": "Views/Shared/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views/Shared/_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/_ViewStart.cshtml",
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/_ViewStart.cshtml",
       "TargetPath": "Views/_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Home/Index.cshtml",
-      "TargetPath": "Views/Home/Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/Components/MenuCategoria/Default.cshtml",
-      "TargetPath": "Views/Shared/Components/MenuCategoria/Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Home/Privacy.cshtml",
-      "TargetPath": "Views/Home/Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/Components/ScoredRating/Default.cshtml",
-      "TargetPath": "Views/Shared/Components/ScoredRating/Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/_ProdutosResumo.cshtml",
-      "TargetPath": "Views/Shared/_ProdutosResumo.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Produto/ExibirDetalhes.cshtml",
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Produto/ExibirDetalhes.cshtml",
       "TargetPath": "Views/Produto/ExibirDetalhes.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Produto/ExibirCategoriaProdutos.cshtml",
-      "TargetPath": "Views/Produto/ExibirCategoriaProdutos.cshtml",
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/_ViewImports.cshtml",
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Shared/Components/ScoredRating/Default.cshtml",
+      "TargetPath": "Views/Shared/Components/ScoredRating/Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Shared/_ProdutosResumo.cshtml",
+      "TargetPath": "Views/Shared/_ProdutosResumo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views/Home/Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/_ViewImports.cshtml",
       "TargetPath": "Views/_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Carrinho/Index.cshtml",
-      "TargetPath": "Views/Carrinho/Index.cshtml",
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Shared/Components/MenuCategoria/Default.cshtml",
+      "TargetPath": "Views/Shared/Components/MenuCategoria/Default.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Shared/Components/CarrinhoResumo/Default.cshtml",
-      "TargetPath": "Views/Shared/Components/CarrinhoResumo/Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views/Shared/Error.cshtml",
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Shared/Error.cshtml",
       "TargetPath": "Views/Shared/Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views/Shared/_Layout.cshtml",
-      "TargetPath": "Views/Shared/_Layout.cshtml",
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Shared/Components/CarrinhoResumo/Default.cshtml",
+      "TargetPath": "Views/Shared/Components/CarrinhoResumo/Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Produto/ExibirCategoriaProdutos.cshtml",
+      "TargetPath": "Views/Produto/ExibirCategoriaProdutos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Home/Index.cshtml",
+      "TargetPath": "Views/Home/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Carrinho/Index.cshtml",
+      "TargetPath": "Views/Carrinho/Index.cshtml",
       "FileKind": "mvc"
     }
   ],

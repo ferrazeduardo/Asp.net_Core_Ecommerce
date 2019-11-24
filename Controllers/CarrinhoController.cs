@@ -3,7 +3,6 @@ using Ecommerce.ViewModels;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using System.Collections.Generic;
 
 namespace Ecommerce.Controllers
 {
@@ -26,6 +25,7 @@ namespace Ecommerce.Controllers
 
             var carrinhoViewModel = new CarrinhoViewModel{
                 Carrinho = _carrinho,
+                CarrinhoId = _carrinho.CarrinhoId,
                 GetTotal = _carrinho.GetCarrinhoTotal()
             };
 
@@ -55,13 +55,6 @@ namespace Ecommerce.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult FinalizarCarrinho(IEnumerable<Produto> Produtos){
-
-            if(Produtos != null){
-                _carrinho.GetFinalizarCarrinho(Produtos);
-            }
-
-            return Content(" "+Produtos.Count());
-        }
+ 
     }
 }

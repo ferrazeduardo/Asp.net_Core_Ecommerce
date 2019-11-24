@@ -6,6 +6,8 @@ const inputs = document.querySelectorAll('input');
 
 const myChange = new Event('myChange');
 
+var todas_linhas = [];
+
 var somaTotal = 0;
 
 /*pega o valor total inicial da compra*/
@@ -51,4 +53,19 @@ calsubtotal.addEventListener('click',event=>{
 
   document.getElementById('subtotal').textContent = soma.toString().replace('.',',');
   console.log(soma)
-});
+
+
+  $('.item').each(function(){
+        
+      var entidade_linha ={
+          ProdutoId:$(this).children()[0].innerText,
+          Nome:$(this).children()[1].innerText,
+          Quantidade:$(this).children()[2].innerText,
+          Preco:$(this).children()[4].innerText
+      };
+      todas_linhas.push(entidade_linha);
+  })
+  $("#btn-pedido").append("<a class='btn btn-success' asp-controller='Pedido' asp-action='FinalizarCarrinho' asp-route-Produtos='todas_linhas'>Pedido</a>")
+  enviar_dados(todas_linhas);
+  
+})
