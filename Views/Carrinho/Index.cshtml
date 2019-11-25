@@ -22,7 +22,7 @@
             <tr class="item">
                 <th scope="row">@produto.Produto.ProdutoId</th>
                 <td >@produto.Produto.Nome</td>
-                <td><input type="number" id="evento_@produto.Produto.ProdutoId" min="1" max="@produto.Produto.Quantidade" value="@produto.Quantidade"> </td>
+                <td><input type="number" class="input" id="evento_@produto.Produto.ProdutoId" min="1" max="@produto.Produto.Quantidade" value="@produto.Quantidade"> </td>
                 <td><section class="evento_@produto.Produto.ProdutoId" >@produto.Produto.Preco</section></td>
                 <td><div name="evento_@produto.Produto.ProdutoId" class="preco_subTotal" >@produto.Produto.Preco</div></td>
                 <td class="text-center"><a class="" asp-controller="Carrinho" asp-action="Remover" asp-route-ProdutoId="@produto.Produto.ProdutoId">Clique</a></td>

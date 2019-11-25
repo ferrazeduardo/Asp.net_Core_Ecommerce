@@ -7,13 +7,20 @@ namespace Ecommerce.Controllers
 {
     public class PedidoController : Controller
     {
-        public IActionResult FinalizarCarrinho([Bind("CarrinhoId,ProdutoId,Quantidade,Preco,Nome")]List<Produto> Produtos){
 
-            // if(carrinhoViewModels != null){
-            //     _carrinho.GetFinalizarCarrinho(carrinhoViewModels);
+        private readonly Carrinho _carrinho;
+
+        public PedidoController(Carrinho carrinho)
+        {
+            _carrinho = carrinho;
+        }
+        public IActionResult FinalizarCarrinho(IEnumerable<string> Produtos){
+
+            // if(Produtos != null){
+            //     _carrinho.GetFinalizarCarrinho(Produtos);
             // }
 
-            return Content(" "+Produtos.Count);
+            return Json(Produtos);
         }
     }
 }

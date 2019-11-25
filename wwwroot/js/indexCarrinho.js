@@ -8,6 +8,8 @@ const myChange = new Event('myChange');
 
 var todas_linhas = [];
 
+var vetor = [];
+
 var somaTotal = 0;
 
 /*pega o valor total inicial da compra*/
@@ -58,16 +60,18 @@ calsubtotal.addEventListener('click',event=>{
       var entidade_linha ={
           ProdutoId:$(this).children()[0].innerText,
           Nome:$(this).children()[1].innerText,
-          Quantidade:$(this).children()[2].innerText,
+          Quantidade:$(this).find('.input').val(),
           Preco:$(this).children()[4].innerText,
-          CarrinhoId: document.getElementById('CarrinhoId').value
+          CarrinhoId:document.getElementById('CarrinhoId').innerHTML
       };
       todas_linhas.push(entidade_linha);
+
+      vetor = todas_linhas.map(item=>[item.ProdutoId,item.Nome,item.Quantidade,item.Preco]);
+
+      console.log(vetor);
   })
 
-  console.log(todas_linhas);
-
-  $("#btn-pedido").append(`<a class='btn btn-success' href='/Pedido/FinalizarCarrinho?Produtos='${todas_linhas}'>Pedido</a>`)
+  $("#btn-pedido").append(`<a class='btn btn-success' href='/Pedido/FinalizarCarrinho?Produtos=${vetor}'>Pedido</a>`)
   //enviar_dados(todas_linhas);
   
 })
