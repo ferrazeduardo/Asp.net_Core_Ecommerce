@@ -14,7 +14,7 @@ namespace Ecommerce.Controllers
         {
             _carrinho = carrinho;
         }
-        public IActionResult FinalizarCarrinho(IEnumerable<string> Produtos){
+        public IActionResult FinalizarCarrinho(string Produtos){
 
             // if(Produtos != null){
             //     _carrinho.GetFinalizarCarrinho(Produtos);

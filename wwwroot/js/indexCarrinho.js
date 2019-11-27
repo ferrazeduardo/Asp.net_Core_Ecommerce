@@ -66,12 +66,11 @@ calsubtotal.addEventListener('click',event=>{
       };
       todas_linhas.push(entidade_linha);
 
-      vetor = todas_linhas.map(item=>[item.ProdutoId,item.Nome,item.Quantidade,item.Preco]);
+      // vetor = todas_linhas.map(item=>[item.ProdutoId,item.Nome,item.Quantidade,item.Preco]);
 
-      console.log(vetor);
+      console.log(todas_linhas);
   })
 
-  $("#btn-pedido").append(`<a class='btn btn-success' href='/Pedido/FinalizarCarrinho?Produtos=${vetor}'>Pedido</a>`)
-  //enviar_dados(todas_linhas);
+  window.location.href = `/Pedido/FinalizarCarrinho?Produtos=${todas_linhas}`
   
 })
