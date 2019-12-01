@@ -6,9 +6,7 @@ const inputs = document.querySelectorAll('input');
 
 const myChange = new Event('myChange');
 
-var todas_linhas = [];
-
-var vetor = [];
+var Produtos = new Array();
 
 var somaTotal = 0;
 
@@ -57,20 +55,28 @@ calsubtotal.addEventListener('click',event=>{
 
   $('.item').each(function(){
         
-      var entidade_linha ={
+      var produto ={
           ProdutoId:$(this).children()[0].innerText,
           Nome:$(this).children()[1].innerText,
           Quantidade:$(this).find('.input').val(),
           Preco:$(this).children()[4].innerText,
           CarrinhoId:document.getElementById('CarrinhoId').innerHTML
       };
-      todas_linhas.push(entidade_linha);
+      Produtos.push(produto);
 
-      // vetor = todas_linhas.map(item=>[item.ProdutoId,item.Nome,item.Quantidade,item.Preco]);
-
-      console.log(todas_linhas);
   })
 
-  window.location.href = `/Pedido/FinalizarCarrinho?Produtos=${todas_linhas}`
+  $.ajax({
+    type:"POST",
+    url: "/Pedido/FinalizarCarrinho",
+    data:JSON.stringify(Produtos),
+    contentType:"application/json; charset=utf-8",
+    dataType:"json",
+    success:function (r) {
+      alert(r + "record(s) insert")
+    }
+  });
+
+  // window.location.href = `/Pedido/FinalizarCarrinho?Produtos=${todas_linhas}`
   
 })

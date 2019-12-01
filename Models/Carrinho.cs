@@ -115,20 +115,5 @@ namespace Ecommerce.Models
 
             return total;
         }
-
-        public IEnumerable<ProdutoCarrinho> GetFinalizarCarrinho(List<Produto> Produtos){
-
-            foreach(var produto in Produtos){
-                produtos = _context.ProdutosCarrinho.Where(p => p.Produto.ProdutoId == produto.ProdutoId && p.CarrinhoId == CarrinhoId);
-            }
-
-            if(produtos != null){
-                _context.ProdutosCarrinho.UpdateRange(produtos);
-            }
-
-            _context.SaveChanges();
-
-            return _context.ProdutosCarrinho;
-        }
     }
 }
