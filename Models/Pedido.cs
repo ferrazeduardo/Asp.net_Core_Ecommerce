@@ -1,11 +1,15 @@
+using System;
+using System.Collections.Generic;
+
 namespace Ecommerce.Models
 {
     public class Pedido
     {
         public int PedidoId { get; set; }
-        public string Nome { get; set; }
-        public string Quantidade { get; set; }
-        public string Preco { get; set; }
-        public Produto Produto{ get; set;}
+        public List<PedidoDetalhe> PedidosDetalhe { get; set; }
+        public int UsuarioId { get; set; }
+        // public virtual Usuario Usuario { get; set; }
+        public decimal PedidoTotal { get; set; }
+        public DateTime DataPedido { get; set; } 
     }
 }

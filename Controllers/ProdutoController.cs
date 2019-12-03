@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Ecommerce.Repositories;
 using Ecommerce.ViewModels;
 using System.Linq;
+using System.Collections.Generic;
+using Ecommerce.Models;
 
 namespace Ecommerce.Controllers
 {
@@ -35,5 +37,23 @@ namespace Ecommerce.Controllers
             return View(model:produtos);
         }
 
+
+        public IActionResult Procurar(string stringProcurar){
+            
+            string _stringProcurar = stringProcurar;
+
+            IEnumerable<Produto> produtos;
+
+            string _categoriaAtual = string.Empty;
+
+            if(string.IsNullOrEmpty(_stringProcurar)){
+                produtos = _produtoRepository.Produtos.OrderBy(p => p.ProdutoId);
+            }
+            else{
+                produtos = _produtoRepository.Produtos.Where(p => p.Nome.ToLower().Contains(_stringProcurar.ToLower()));
+            }
+
+            return View("~/Views/Home/Index.cshtml",new ProdutoViewModel {Produtos = produtos.ToList()});
+        }
     }
 }

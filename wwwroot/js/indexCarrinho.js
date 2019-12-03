@@ -57,7 +57,6 @@ calsubtotal.addEventListener('click',event=>{
         
       var produto ={
           ProdutoId:$(this).children()[0].innerText,
-          Nome:$(this).children()[1].innerText,
           Quantidade:$(this).find('.input').val(),
           Preco:$(this).children()[4].innerText,
           CarrinhoId:document.getElementById('CarrinhoId').innerHTML
@@ -68,7 +67,7 @@ calsubtotal.addEventListener('click',event=>{
 
   $.ajax({
     type:"POST",
-    url: "/Pedido/FinalizarCarrinho",
+    url: "/Carrinho/FinalizarCarrinho",
     data:JSON.stringify(Produtos),
     contentType:"application/json; charset=utf-8",
     dataType:"json",

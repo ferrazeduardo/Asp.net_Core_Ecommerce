@@ -1,37 +1,41 @@
-using System.Collections.Generic;
+using System;
 using Ecommerce.Models;
 using Ecommerce.Data;
-using System.Linq;
 
 namespace Ecommerce.Repositories
 {
     public class PedidoRepository : IPedidoRepository
     {
-
         private readonly AppDbContext _context;
-        
-        public PedidoRepository(AppDbContext context){
-            _context=context;
+        private readonly Carrinho _carrinho;
+
+        public PedidoRepository(AppDbContext context,Carrinho carrinho)
+        {
+            _context = context;
+            _carrinho = carrinho;
         }
 
-        public IEnumerable<Pedido> GetFinalizarCarrinho(List<Produto> Produtos){
-            
-            var produtos = new List<Produto>();
+        public void CriarPedido(Pedido pedido)
+        {
+            pedido.DataPedido = DateTime.Now;
 
-            foreach(var produto in Produtos){
-                produtos = _context.ProdutosCarrinho.Where(p => p.Produto.ProdutoId == produto.ProdutoId && p.CarrinhoId == CarrinhoId);
-            }
+            _context.Pedidos.Add(pedido);
 
-            if(produtos != null){
-                _context.Pedido.UpdateRange(produtos);
+            var produtosCarrinho = _carrinho.ProdutosCarrinho;
+
+            foreach (var produtoCarrinho in produtosCarrinho)
+            {
+                var pedidoDetalhe = new PedidoDetalhe{
+                    PedidoId = pedido.PedidoId,
+                    ProdutoId = produtoCarrinho.ProdutoId,
+                    Preco = produtoCarrinho.Preco,
+                    Quantidade = produtoCarrinho.Quantidade
+                };
+
+                _context.PedidoDetalhes.Add(pedidoDetalhe);
             }
 
             _context.SaveChanges();
-
-            return _context.ProdutosCarrinho;
         }
     }
 }
-
-
-        
