@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Ecommerce.Repositories;
 using Microsoft.AspNetCore.Http;
 using Ecommerce.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Ecommerce
 {
@@ -27,6 +28,10 @@ namespace Ecommerce
             services.AddDbContext<AppDbContext>(options =>
                 options.UseMySql(connection)
             );
+
+            services.AddIdentity<IdentityUser,IdentityRole>()
+                    .AddEntityFrameworkStores<AppDbContext>()
+                    .AddDefaultTokenProviders();
 
             services.AddTransient<IProdutoRepository,ProdutoRepository>();
             services.AddTransient<ICategoriaRepository,CategoriaRepository>();
@@ -63,6 +68,8 @@ namespace Ecommerce
             app.UseRouting();
             
             app.UseSession();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

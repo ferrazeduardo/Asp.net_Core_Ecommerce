@@ -72,19 +72,8 @@ namespace Ecommerce.Models
             var quantidadeLocal = 0;
 
             if (produtoCarrinho != null)
-            {
-
-                if (produtoCarrinho.Quantidade > 1)
-                {
-
-                    produtoCarrinho.Quantidade--;
-
-                    quantidadeLocal = produtoCarrinho.Quantidade;
-                }
-                else
-                {
-                    _context.ProdutosCarrinho.Remove(produtoCarrinho);
-                }
+            {            
+                _context.ProdutosCarrinho.Remove(produtoCarrinho);   
             }
 
             _context.SaveChanges();

@@ -37,14 +37,12 @@ namespace Ecommerce.Controllers
             return View(model:produtos);
         }
 
-
+        /*procurar o produto desejado*/
         public IActionResult Procurar(string stringProcurar){
             
             string _stringProcurar = stringProcurar;
 
             IEnumerable<Produto> produtos;
-
-            string _categoriaAtual = string.Empty;
 
             if(string.IsNullOrEmpty(_stringProcurar)){
                 produtos = _produtoRepository.Produtos.OrderBy(p => p.ProdutoId);
