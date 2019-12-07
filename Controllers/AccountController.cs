@@ -21,7 +21,6 @@ namespace Ecommerce.Controllers
         }
 
         //implementar login, registro e logout
-
         public IActionResult Login(string returnUrl)
         {
             return View(new LoginViewModel()
@@ -29,7 +28,7 @@ namespace Ecommerce.Controllers
                 ReturnUrl = returnUrl
             });
         }
-
+        /*receber os dados da pagina login*/
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginVM)
         {
@@ -55,11 +54,37 @@ namespace Ecommerce.Controllers
             return View(loginVM);
         }
 
+        /*metodo register get*/
         public IActionResult Register()
         {
             return View();
         }
 
-        
+        /*metodo register post*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(LoginViewModel registerVM){
+
+            if(ModelState.IsValid){
+                var user = new IdentityUser(){UserName = registerVM.UserName};
+
+                var result =    await _userManager.CreateAsync(user, registerVM.Password);
+
+                if(result.Succeeded){
+                    return RedirectToAction("Index","Home");
+                }
+            }
+
+            return View(registerVM);
+        }  
+
+        /*Metodo Logout*/
+        [HttpPost]
+        public async Task<IActionResult> Logout(){
+
+            await _signInManager.SignOutAsync();
+            
+            return RedirectToAction("Index","Home");
+        }      
     }
 }
