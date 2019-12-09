@@ -35,7 +35,7 @@ namespace Ecommerce.Controllers
             if (!ModelState.IsValid)
                 return View(loginVM);
 
-            var user = await _userManager.FindByNameAsync(loginVM.UserName);
+            var user = await _userManager.FindByEmailAsync(loginVM.UserName);
 
             if(user !=null )
             {

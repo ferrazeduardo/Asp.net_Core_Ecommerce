@@ -1,0 +1,35 @@
+@model LoginViewModel
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-md-5 col-xl-5">
+            <div class="card card-signin shadow">
+                <div class="card-body">
+                    <h5 class="card-title texte-center">Login</h5>
+                    <form class="form signin" asp-controller="Account" asp-action="Login" method="post">
+                        <input type="hidden" asp-for="ReturnUrl"/>
+                        <div class="form-label-group">
+                            <label asp-for="UserName">Email:</label>
+                            <input type="email" placeholder="Email" class="form-control" asp-for="UserName" autofocus/>
+                            <span asp-validation-for="UserName"></span>
+                        </div>
+                        <div class="form-label-group">
+                            <label asp-for="Password">Senha:</label>
+                            <input type="password" class="form-control" asp-for="Password" placeholder="Senha" required>
+                            <span asp-validation-for="Password"></span>
+                        </div>
+
+                        <div class="form-label-group my-3">
+                            <input type="checkbox" class="cutom-control-input">
+                            <label>Lembrar a Senha</label>
+                        </div>
+                        <button class="btn btn-lg btn-success btn-block text-uppercase" type="submit">Login</button>
+                        <hr class="my-4">
+                        <button class="btn btn-danger btn-block text-uppercase" type="submit"><img src="https://img.icons8.com/plasticine/40/000000/google-logo.png">oogle</button>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"><img src="https://img.icons8.com/cotton/38/000000/facebook.png">acebook</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
