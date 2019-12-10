@@ -76,3 +76,5 @@
 /home/eduardo/Documentos/projetos/Ecommerce/bin/Debug/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll
 /home/eduardo/Documentos/projetos/Ecommerce/bin/Debug/netcoreapp3.0/runtimes/win/lib/netcoreapp2.1/System.Security.Cryptography.Pkcs.dll
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Account/Login.cshtml.g.cs
+/home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Account/Register.cshtml.g.cs
+/home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_LoginPartial.cshtml.g.cs

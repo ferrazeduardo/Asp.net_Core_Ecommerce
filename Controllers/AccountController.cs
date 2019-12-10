@@ -6,15 +6,16 @@ using Ecommerce.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Ecommerce.Models;
 
 namespace Ecommerce.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signManager)
         {
             _userManager = userManager;
             _signInManager = signManager;
@@ -30,12 +31,13 @@ namespace Ecommerce.Controllers
         }
         /*receber os dados da pagina login*/
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel loginVM)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login([Bind("UserName","Password","ReturnUrl")]LoginViewModel loginVM)
         {
-            if (!ModelState.IsValid)
-                return View(loginVM);
+            // if (!ModelState.IsValid)
+            //     return View(loginVM);
 
-            var user = await _userManager.FindByEmailAsync(loginVM.UserName);
+            var user = await _userManager.FindByNameAsync(loginVM.UserName);
 
             if(user !=null )
             {
@@ -66,7 +68,12 @@ namespace Ecommerce.Controllers
         public async Task<IActionResult> Register(LoginViewModel registerVM){
 
             if(ModelState.IsValid){
-                var user = new IdentityUser(){UserName = registerVM.UserName};
+
+                var user = new ApplicationUser(){
+                    UserName = registerVM.UserName
+                };
+
+                // var user = new IdentityUser(){UserName = registerVM.UserName};
 
                 var result =    await _userManager.CreateAsync(user, registerVM.Password);
 

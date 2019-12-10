@@ -5,12 +5,14 @@ namespace Ecommerce.ViewModels
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "User name")]
-        [RegularExpression(@"b[A-Z0-9._%-]+@[A-Z0-9.-]+.[A-Z]{2,4}b", ErrorMessage = "E-mail em formato inválido.")]
+        [Display(Name = "E-mail")]
+        [EmailAddress]
         public string UserName { get; set; }
         
         [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
         [Required]

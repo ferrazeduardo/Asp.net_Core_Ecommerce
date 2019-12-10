@@ -28,6 +28,7 @@
                             @await Component.InvokeAsync("CarrinhoResumo")
                         </li>
                     </ul>
+                    @await Html.PartialAsync("_LoginPartial")
                     <form class="form-inline" asp-controller="Produto" asp-action="Procurar" method="get">
                         <div class="form-group row">
                             @Html.TextBox("stringProcurar",null,new {@class="form-control"})

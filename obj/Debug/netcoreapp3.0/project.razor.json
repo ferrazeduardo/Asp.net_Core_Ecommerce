@@ -14498,6 +14498,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Shared/_LoginPartial.cshtml",
+      "TargetPath": "Views/Shared/_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Account/Login.cshtml",
       "TargetPath": "Views/Account/Login.cshtml",
       "FileKind": "mvc"

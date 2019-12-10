@@ -29,7 +29,13 @@ namespace Ecommerce
                 options.UseMySql(connection)
             );
 
-            services.AddIdentity<IdentityUser,IdentityRole>()
+            services.AddIdentity<ApplicationUser,IdentityRole>(options=>{
+                options.Password.RequiredLength = 6;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+            })
                     .AddEntityFrameworkStores<AppDbContext>()
                     .AddDefaultTokenProviders();
 

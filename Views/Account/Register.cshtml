@@ -9,12 +9,12 @@
                     <form class="form signin" asp-controller="Account" asp-action="Register" method="post">
                         <input type="hidden" asp-for="ReturnUrl"/>
                         <div class="form-label-group">
-                            <label asp-for="UserName">Email:</label>
-                            <input type="email" placeholder="Email" class="form-control" asp-for="UserName" autofocus/>
+                            <label asp-for="UserName"></label>
+                            <input type="text" placeholder="Email" class="form-control" asp-for="UserName" autofocus/>
                             <span asp-validation-for="UserName"></span>
                         </div>
                         <div class="form-label-group">
-                            <label asp-for="Password">Senha:</label>
+                            <label asp-for="Password"></label>
                             <input type="password" class="form-control" asp-for="Password" placeholder="Senha" required>
                             <span asp-validation-for="Password"></span>
                         </div>
