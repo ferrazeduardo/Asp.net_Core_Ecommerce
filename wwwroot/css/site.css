@@ -62,6 +62,16 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
+.navbar{
+  background-color: #363F48;
+}
+
+.second-menu{
+  background-color: #262d33;
+}
+
+
 .footer {
   position: absolute;
   bottom: 0;

@@ -1,12 +1,10 @@
 @model ProdutoViewModel
 
-<ul>
-    @foreach (var categoria in Model.Categorias)
-    {
-        <li>
-            <a asp-controller="Produto" asp-action="ExibirCategoriaProdutos" asp-route-CategoriaId="@categoria.CategoriaId">
-                @categoria.CategoriaNome
-            </a>
-        </li>   
-    }
-</ul>
+@foreach (var categoria in Model.Categorias)
+{
+    <span class="mr-4">
+        <a class="text-white" asp-controller="Produto" asp-action="ExibirCategoriaProdutos" asp-route-CategoriaId="@categoria.CategoriaId">
+            @categoria.CategoriaNome
+        </a>
+    </span>   
+}

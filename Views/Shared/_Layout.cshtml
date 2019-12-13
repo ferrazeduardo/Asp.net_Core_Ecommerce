@@ -9,49 +9,30 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+        <nav class="navbar">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">e_commerce</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li>
-                            @await Component.InvokeAsync("CarrinhoResumo")
-                        </li>
-                    </ul>
-                    @await Html.PartialAsync("_LoginPartial")
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="https://img.icons8.com/cotton/64/000000/paypal--v2.png"></a>
+                <div class="navbar-form navbar-left" role="search">
                     <form class="form-inline" asp-controller="Produto" asp-action="Procurar" method="get">
-                        <div class="form-group row">
-                            @Html.TextBox("stringProcurar",null,new {@class="form-control"})
-                        </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <button type="submit" class="btn btn-default mb-2">Procurar</button>
-                        </div>
+                        @Html.TextBox("stringProcurar",null,new {@class="site-search border-0 py-1"})
+                        <button type="submit" class="btn btn-white" ><img src="https://img.icons8.com/cotton/20/000000/search--v2.png"></button>
                     </form>
                 </div>
+                <span>
+                    @await Component.InvokeAsync("CarrinhoResumo")
+                </span>
+                <span>
+                    @await Html.PartialAsync("_LoginPartial")       
+                </span>
             </div>
         </nav>
         <!-- Toggle Categoria -->
-        <div class="container mt-0 mb-4 ">
-            <div class="collapse" id="navbarToggleExternalContent">
-                <div class="bg-light p-4">
+        <div class="second-menu">
+            <div class="container mt-0 mb-4 ">
+                <div class="">
                     @await Component.InvokeAsync("MenuCategoria")
                 </div>
             </div>
-            <nav class="navbar navbar-light bg-light border-bottom box-shadow">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            </nav>
         </div>
     </header>
     <div class="container">

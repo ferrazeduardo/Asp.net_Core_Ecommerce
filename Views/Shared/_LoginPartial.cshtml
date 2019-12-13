@@ -1,10 +1,12 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
 @inject SignInManager<ApplicationUser> Sign
 
 @if (Sign.IsSignedIn(User))
 {
+    <span>
+        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>                    
+    </span>
     <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
         method="post" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
@@ -14,8 +16,7 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li><a id="registerLink" asp-controller="Account" asp-action="Register"> Registrar </a></li>
-        <li><a id="loginLink" asp-controller="Account" asp-action="Login"> Log in </a></li>
-    </ul>
+        <span><a class="text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a></span>
+        <span><a id="registerLink" class="text-white" asp-controller="Account" asp-action="Register">Registrar</a></span>
+        <span><a id="loginLink" class="text-white" asp-controller="Account" asp-action="Login">Log in</a></span>
 }
