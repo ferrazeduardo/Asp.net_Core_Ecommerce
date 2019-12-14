@@ -1,20 +1,24 @@
 @model Produto 
 
-<div class="col-sm-4">
-    <div class="card">
-        <img src="@Model.ImagemUrl" class="card-img-top" alt="@Model.Nome">
-        <div class="card-body">
-            <h5 class="card-title">
-                Nome : @Model.Nome
-            </h5>
-            <p class="card-text">
-                Preço : @Model.Preco
-            </p>
-            <p>
-                @await Component.InvokeAsync("ScoredRating", new {ProdutoId=Model.ProdutoId})
-            </p>
-            <a class="btn btn-warning" asp-controller="Produto" asp-action="ExibirDetalhes" asp-route-ProdutoId="@Model.ProdutoId">Detalhes</a>
-            <a class="btn btn-primary" asp-controller="Carrinho" asp-action="Adicionar" asp-route-ProdutoId="@Model.ProdutoId">+ Carrinho</a>                
+<div class="col-sm-4 col-lg-3 col-md-4 col-xs-12">
+    <a class="link-card" asp-controller="Produto" asp-action="ExibirDetalhes" asp-route-ProdutoId="@Model.ProdutoId">
+        <div class="card">
+                <figure>
+                    <img src="@Model.ImagemUrl" class="card-img-top" style="width:100%" alt="@Model.Nome">
+                </figure>
+            <div class="card-body">
+                <h5 class="card-title">
+                    @Model.Nome
+                </h5>
+                <p class="card-text">
+                    R$ @Model.Preco
+                </p>
+                <p>
+                    @await Component.InvokeAsync("ScoredRating", new {ProdutoId=Model.ProdutoId})
+                </p>
+            </div>
+            <a class="btn adicionar-carrinho" asp-controller="Carrinho" asp-action="Adicionar" asp-route-ProdutoId="@Model.ProdutoId"><img src="https://img.icons8.com/dotty/30/000000/add-shopping-cart.png"> Carrinho</a>                
         </div>
-    </div>
+    </a>
 </div>
+

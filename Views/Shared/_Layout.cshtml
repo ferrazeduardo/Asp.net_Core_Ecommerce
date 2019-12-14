@@ -14,8 +14,8 @@
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="https://img.icons8.com/cotton/64/000000/paypal--v2.png"></a>
                 <div class="navbar-form navbar-left" role="search">
                     <form class="form-inline" asp-controller="Produto" asp-action="Procurar" method="get">
-                        @Html.TextBox("stringProcurar",null,new {@class="site-search border-0 py-1"})
-                        <button type="submit" class="btn btn-white" ><img src="https://img.icons8.com/cotton/20/000000/search--v2.png"></button>
+                        @Html.TextBox("stringProcurar",null,new {@class="site-search border-0 py-1",placeholder="Procurar"})
+                        <button type="submit" class="search-button" ><img src="https://img.icons8.com/dusk/20/000000/search.png"></button>
                     </form>
                 </div>
                 <span>
@@ -41,11 +41,28 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer">
         <div class="container">
-            &copy; 2019 - e_commerce - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row mt-4">
+                <section class="col-md-3 mr-3">
+                    <h4 class="mb-0">contatos</h4>
+                    <p style="font-size: 14px; line-height: 19px;">Comércio eletrônico ou comércio eletrónico
+                    e-commerce, comércio virtual ou venda não-presencial,
+                    é um tipo de transação comercial feita especialmente através de 
+                    um equipamento eletrônico, como, por exemplo, computadores, tablets e smartphones. </p>
+                </section>
+                <section class="col-md-3 text-center">
+                    <h4>Redes Sociais</h4>
+                    <span><img src="https://img.icons8.com/cute-clipart/40/000000/facebook.png"></span>
+                    <span><img src="https://img.icons8.com/officel/40/000000/google-plus.png"></span>
+                    <span><img src="https://img.icons8.com/dusk/50/000000/twitter.png"></span>
+                    <span><img src="https://img.icons8.com/plasticine/60/000000/pinterest.png"></span>
+                </section>
+                <section class="col-md-3">
+                    <a href="https://icons8.com/icon/47709/comprar">Comprar icon by Icons8</a>
+                </section>
+            </div>
         </div>
-        <a href="https://icons8.com/icon/47709/comprar">Comprar icon by Icons8</a>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
