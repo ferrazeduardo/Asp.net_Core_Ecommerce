@@ -1,8 +1,8 @@
 @model CarrinhoViewModel
 
 @if(Model.Carrinho.GetProdutosCarrinho().Count>=1){
-    <span> <img src="https://img.icons8.com/office/30/000000/buy.png"> </span>
-    <span class="cart-status">
+    <span> <img class="text-white border bg-white p-2 rounded-circle" src="https://img.icons8.com/pastel-glyph/35/000000/shopping-cart--v2.png"> </span>
+    <span class="cart-status text-white font-weight-bold">
         @Model.Carrinho.GetProdutosCarrinho().Count
     </span>
 }

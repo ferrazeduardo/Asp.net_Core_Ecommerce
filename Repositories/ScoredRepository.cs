@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Ecommerce.Data;
 
@@ -44,7 +45,13 @@ namespace Ecommerce.Repositories
             }
 
             int v = (count1 + count2 + count3 + count4 + count5);
-            return (produto1 + produto2 + produto3 + produto4 + produto5) / v;
+
+            try{
+                return (produto1 + produto2 + produto3 + produto4 + produto5) / v;
+            }catch(DivideByZeroException){
+                return 0;
+            }
+
         } 
     }
 }
