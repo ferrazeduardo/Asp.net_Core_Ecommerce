@@ -1,9 +1,5 @@
-﻿﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿﻿using System.Threading.Tasks;
 using Ecommerce.ViewModels;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Ecommerce.Models;
@@ -13,7 +9,7 @@ namespace Ecommerce.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;//serve para autenticação
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signManager)
         {
@@ -34,8 +30,8 @@ namespace Ecommerce.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([Bind("UserName","Password","ReturnUrl")]LoginViewModel loginVM)
         {
-            // if (!ModelState.IsValid)
-            //     return View(loginVM);
+            if (!ModelState.IsValid)
+                return View(loginVM);
 
             var user = await _userManager.FindByNameAsync(loginVM.UserName);
 
@@ -65,7 +61,7 @@ namespace Ecommerce.Controllers
         /*metodo register post*/
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(LoginViewModel registerVM){
+        public async Task<IActionResult> Register(RegisterViewModel registerVM){
 
             if(ModelState.IsValid){
 

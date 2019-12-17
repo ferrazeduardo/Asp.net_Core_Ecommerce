@@ -44,7 +44,7 @@ namespace Ecommerce
             services.AddTransient<IScoredRepository,ScoredRepository>();
             services.AddTransient<IPedidoRepository,PedidoRepository>();
             
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();//encapsula todas as informações especificas de http sobre uma solicitação http individual
 
             services.AddScoped(cp => Carrinho.GetCarrinho(cp));
 

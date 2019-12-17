@@ -15,6 +15,7 @@ namespace Ecommerce.Repositories
             _carrinho = carrinho;
         }
 
+        /*medito criar pedido para persistencia dos produtos do carrinho*/
         public void CriarPedido(Pedido pedido)
         {
             pedido.DataPedido = DateTime.Now;

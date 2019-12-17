@@ -25,7 +25,7 @@ namespace Ecommerce.Models
         public static Carrinho GetCarrinho(IServiceProvider services)
         {
             ISession session =
-                services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+                services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;//Obtém o objeto HttpSessionState para a solicitação HTTP atual.
 
             var context = services.GetService<AppDbContext>();
 
@@ -108,7 +108,7 @@ namespace Ecommerce.Models
 
             return total;
         }
-
+        /*finalizar o carrinho e salvar as mudanças no ProdutoCarrinho*/
         public void GetFinalizarCarrinho(List<ProdutoCarrinho> Produtos)
         {
 

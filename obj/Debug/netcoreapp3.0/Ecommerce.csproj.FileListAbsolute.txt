@@ -78,3 +78,4 @@
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Account/Login.cshtml.g.cs
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Account/Register.cshtml.g.cs
 /home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+/home/eduardo/Documentos/projetos/Ecommerce/obj/Debug/netcoreapp3.0/Razor/Views/Pedido/Pedido.cshtml.g.cs

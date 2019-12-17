@@ -14503,6 +14503,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Pedido/Pedido.cshtml",
+      "TargetPath": "Views/Pedido/Pedido.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/eduardo/Documentos/projetos/Ecommerce/Views/Account/Login.cshtml",
       "TargetPath": "Views/Account/Login.cshtml",
       "FileKind": "mvc"

@@ -71,11 +71,11 @@ calsubtotal.addEventListener('click',event=>{
     data:JSON.stringify(Produtos),
     contentType:"application/json; charset=utf-8",
     dataType:"json",
-    success:function (r) {
-      alert(r + "record(s) insert")
+    success:function () {
+      window.location.href = `/Pedido/FinalizarCarrinho?Produtos=${Produtos}`;
     }
   });
 
-  // window.location.href = `/Pedido/FinalizarCarrinho?Produtos=${todas_linhas}`
+  
   
 })
