@@ -72,7 +72,7 @@ calsubtotal.addEventListener('click',event=>{
     contentType:"application/json; charset=utf-8",
     dataType:"json",
     success:function () {
-      window.location.href = `/Pedido/FinalizarCarrinho?Produtos=${Produtos}`;
+      window.location.href = `/Pedido/Pedido`;
     }
   });
 

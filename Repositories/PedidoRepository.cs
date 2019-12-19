@@ -18,16 +18,16 @@ namespace Ecommerce.Repositories
         /*medito criar pedido para persistencia dos produtos do carrinho*/
         public void CriarPedido(Pedido pedido)
         {
-            pedido.DataPedido = DateTime.Now;
+            pedido.PedidoTotal = _carrinho.GetCarrinhoTotal();
 
             _context.Pedidos.Add(pedido);
 
-            var produtosCarrinho = _carrinho.ProdutosCarrinho;
+            var produtosCarrinho = _carrinho.GetProdutosCarrinho();
 
             foreach (var produtoCarrinho in produtosCarrinho)
             {
                 var pedidoDetalhe = new PedidoDetalhe{
-                    PedidoId = pedido.PedidoId,
+                    NumeroPedido = pedido.NumeroPedido,
                     ProdutoId = produtoCarrinho.ProdutoId,
                     Preco = produtoCarrinho.Preco,
                     Quantidade = produtoCarrinho.Quantidade

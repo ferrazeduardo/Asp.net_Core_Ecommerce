@@ -126,14 +126,30 @@ namespace Ecommerce.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Cidade")
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10);
+
                     b.Property<DateTime>("DataPedido")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("varchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("Localizacao")
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<int>("NumeroDaCasa")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("PedidoTotal")
                         .HasColumnType("decimal(65,30)");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserName")
+                        .HasColumnType("varchar(200)")
+                        .HasMaxLength(200);
 
                     b.HasKey("PedidoId");
 
@@ -146,7 +162,7 @@ namespace Ecommerce.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("PedidoId")
+                    b.Property<int?>("PedidoId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Preco")
@@ -384,11 +400,9 @@ namespace Ecommerce.Migrations
 
             modelBuilder.Entity("Ecommerce.Models.PedidoDetalhe", b =>
                 {
-                    b.HasOne("Ecommerce.Models.Pedido", "Pedido")
-                        .WithMany("PedidosDetalhe")
-                        .HasForeignKey("PedidoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("Ecommerce.Models.Pedido", null)
+                        .WithMany("Detalhes")
+                        .HasForeignKey("PedidoId");
 
                     b.HasOne("Ecommerce.Models.Produto", "Produto")
                         .WithMany()
